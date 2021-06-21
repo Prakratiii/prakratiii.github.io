@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title></title>
+</head>
+<body>
+<!-- 	<form method = "GET"> -->
+		<h4> Your Commute by Car: </h4>
+		<div id= "car">
+			<label> Where do I find this? Estimate the total number of gallons of gasoline you use per week.On average, unleaded gasoline emits about 19.56 pounds of CO2 per gallon.</label><br>
+			<label> Estimated number of gallons of gasoline you use per week:</label><input type="number" name="Gasoline"><br>
+			<label> multiplied by 52 weeks and multiplied by 19.56 pounds of CO2 per gallon equals</label><input type="number" name="Car" placeholder="0.0"><label> total pounds of CO2 emitted per year.</label><br>
+		</div>	
+		<h4> Your Commute by Plane: </h4>
+		<div id="plane">
+			<label> Where do I find this? Estimate the total number of miles you travel by plane per year. On Average, a plane emits about .55 pounds of CO2 per passenger mile.</label><br>
+			<label>Estimated numbers of miles you travel by plane per year:</label><input type="number" name="Miles_Plane"><br>
+			<label> multiplied by 0.55 equals</label><input type="number" name="Airplane" placeholder="0.0"><label> total pounds of CO2 emitted per year.</label><br>
+		</div>	
+		<h4> Your Commute by Long Distance Train: </h4>
+		<div id="train">
+			<label> Where do I find this? Estimate the total number of miles you travel by long distance train per year. On average, a long distance train emits about 0.30 pounds of CO2 per passenger mile.</label><br>
+			<label> Estimated numbers of miles you travel by train per year:</label><input type="number" name="Miles_Train"><br>
+			<label>multiplied by 0.30 equals</label><input type="number" name="Train" placeholder="0.0"><label> total pounds of CO2 emitted per year.</label><br>
+		</div>	
+		<h4> Your Travel by Subway: </h4>
+		<div id="subway">
+			<label>Where do I find this? Estimate the total number of miles you travel by subway per year. This can typically be found on your local subway's website. On average, a commuter train emits about 0.25 pounds of CO2 per passenger mile.</label><br>
+			<label>Estimated number of miles you travel by subway per year:</label><input type="number" name="Miles_Subway"><br>
+			<label>multiplied by 0.25 equals</label><input type="number" name="Subway" placeholder="0.0"><label> total pounds of CO2 emitted per year.</label><br>
+		</div>	
+		<h4> Your Home Energy Use: </h4>
+		<div id="home">
+			<label> Where do I find this? On your monthly electric bill your monthly energy use is listed. Add up your energy use totals from the past 12 electric bills.</label><br>
+			<label>On average, electricity sources emits about 0.99 pounds of CO2 per kWh.</label><br>
+			<label>On average, 1 therm of natural gas emits about 12.08 pounds of CO2</label><br>
+			<label>Total electricity use: </label><input type="number" name="Electricity"><label>kWh/Yr multiplied by 0.99</label><br>
+			<label>Total gas use: </label><input type="number" name="Gas"><label>therms/Yr multiplied by 12.08</label><br>
+			<label>Equals:</label><input type="number" name="Home"><label> total pounds of CO2 emitted per year.</label><br>
+		</div>	
+		<h4> Your Totals: </h4>
+		<div id="totals">
+			<label>Your total emissions for the year are:</label><input type="number" name="total_emissions"><br>
+			<label>Converted into metric tonnes, this is:</label><input id= "total" type="number" name="total_tonnes"><br>
+		</div>
+		<button type="submit" id="enter">Calculate trees</button><br>
+		<div id=block></div>
+<!-- 	</form> -->
+	<script type="text/javascript">
+		block = document.getElementById("block");
+		button = document.getElementById("enter");
+		button.addEventListener("click", function(){
+			var total = document.getElementById("total");
+			trees = (total.value)*6
+			block.append(trees+" "+"no. of trees")
+		})
+	</script>
+</body>
+</html>
